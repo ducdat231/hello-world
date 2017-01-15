@@ -1,0 +1,74 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+
+using namespace std;
+
+int main()
+{ 
+	string name = "Trang";
+	int dob;
+	cout<<"Hello, may I ask who you are?"<<endl;
+	cin>>name;
+	if (name == "Trang")
+	{
+	cout<<"Vo oi, anh la Dat map ne!"<<endl;
+	cout<<"Hom nay nhan ky niem 100 ngay cua hai dua minh"<<endl;
+	cout<<"ma anh lai khong o bene canh em duoc, anh cung"<<endl;
+	cout<<"khong co tai nang am nhac tho van gi de viet hay"<<endl;
+	cout<<"hat tang em\n";
+	cout<<""<<endl;
+	cout<<"Anh chi biet noi rang anh cam on em vi da o ben"<<endl;
+	cout<<"canh anh, quan tam va thuong yeu anh bang ca trai"<<endl;
+	cout<<"tim cua minh."<<endl;
+	cout<<""<<endl;
+	cout<<"ANH YEU EM LAM HONG TRANG CUA ANH!!!"<<endl;
+	cout<<""<<endl;
+	double x, y, size=10;
+    char ch=3;
+    string message(" Happy 100 days aniversary!!!");
+    int print_line = 4;
+
+    if (message.length() % 2 != 0) message += " ";
+
+    for (x=0;x<size;x++)
+    {
+        for (y=0;y<=4*size;y++)
+        {
+            double dist1 = sqrt( pow(x-size,2) + pow(y-size,2) );
+            double dist2 = sqrt( pow(x-size,2) + pow(y-3*size,2) );
+
+            if (dist1 < size + 0.5 || dist2 < size + 0.5 ) {
+                cout << ch;
+            }
+            else cout << " ";
+        }
+        cout<<"\n";
+    }
+
+    for (x=1;x<2*size;x++)
+    {
+        for(y=0;y<x;y++) cout << " ";
+
+        for (y=0; y<4*size + 1 - 2*x; y++)
+        {
+            if (x >= print_line - 1 && x <= print_line + 1) {
+                int idx = y - (4*size - 2*x - message.length()) / 2;
+                if (idx < message.length() && idx >= 0) {
+                    if (x == print_line) cout<<message[idx];
+                    else cout << " ";
+                }
+                else cout << ch;
+            }
+            else cout << ch;
+        }
+        cout<<endl;
+    }
+	}
+	else
+	{
+		cout<<"This program is written for a very special person!"<<endl;
+		cout<<"You are not her! Goodbye!!!"<<endl;
+	}
+    return 0;
+}
